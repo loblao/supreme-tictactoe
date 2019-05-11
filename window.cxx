@@ -22,17 +22,20 @@ Window* Window::get_global_ptr()
 
 bool Window::init(int w, int h, const char* title)
 {
-	if (SDL_Init(SDL_INIT_VIDEO) < 0)
-	   return false;
+    if (SDL_Init(SDL_INIT_VIDEO) < 0)
+        return false;
 
     if (TTF_Init() == -1)
         return false;
 
+    if (get_font() == nullptr)
+	return false;
+
     m_window = SDL_CreateWindow(title, SDL_WINDOWPOS_UNDEFINED,
                                 SDL_WINDOWPOS_UNDEFINED,
                                 w, h, SDL_WINDOW_SHOWN);
-	if (m_window == nullptr)
-	   return false;
+    if (m_window == nullptr)
+        return false;
 
     m_renderer = SDL_CreateRenderer(m_window, -1, SDL_RENDERER_ACCELERATED);
     if (m_renderer == nullptr)

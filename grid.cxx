@@ -15,12 +15,14 @@ Grid* Grid::get(int index)
 }
 
 static struct {
-    Grid* grid = nullptr;
+    Grid* grid;
     int index;
 } s_last;
 
 Grid::Grid(int index, int x, int y) : m_x(x), m_y(y)
 {
+	s_last.grid = nullptr;
+
     if (s_tex_x == nullptr)
     {
         Window* w = Window::get_global_ptr();

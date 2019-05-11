@@ -11,7 +11,7 @@
 #define TEXT_COLOR 0,0,0
 #define LAST_HIGHLIGHT_COLOR 0xFF,0xFF,0,0xFF
 
-#define FONT_FILENAME "/usr/share/fonts/truetype/ubuntu-font-family/UbuntuMono-R.ttf"
+#define FONT_FILENAME "UbuntuMono-R.ttf"
 #define FONT_PTSIZE 32
 
 #define XLINE_PADDING 10
