@@ -1,7 +1,11 @@
 #include "superGrid.h"
 
 #include "globals.h"
-#include "grid.h"
+
+SuperGrid::SuperGrid()
+{
+	g = nullptr;
+}
 
 SuperGrid::~SuperGrid()
 {
@@ -47,7 +51,7 @@ void SuperGrid::check()
         for (int j = 0; j < NUM_GRIDS; j++)
         {
             int index = NUM_SQUARES * j + i;
-            Grid* g = Grid::get(index);
+            g = Grid::get(index);
             grid[index] = g->get_winner();
         }
     }
